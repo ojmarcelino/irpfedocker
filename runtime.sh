@@ -11,6 +11,6 @@ docker run \
   -e DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -v ~/ProgramasRFB:/home/irpf/ProgramasRFB \
-  ojmarcelino/irpf
+  ojmarcelino/irpf:latest
 
 xhost -local:docker

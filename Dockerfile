@@ -1,5 +1,3 @@
-LABEL maintainer=ojmarcelino
-
 FROM alpine as packager
 
 RUN apk -U --progress -q --no-cache add openjdk11-jdk openjdk11-jmods libxext libxrender libxtst libxi 
@@ -17,9 +15,9 @@ RUN /usr/lib/jvm/java-11-openjdk/bin/jlink \
 
 FROM alpine
 
-WORKDIR /opt/IRPF2022
+WORKDIR /opt/IRPF2023
 
-ARG url=https://downloadirpf.receita.fazenda.gov.br/irpf/2022/irpf/arquivos/IRPF2022-1.9.zip
+ARG url=https://downloadirpf.receita.fazenda.gov.br/irpf/2023/irpf/arquivos/IRPF2023-1.5.zip
 
 ENV JAVA_HOME=/opt/java-minimal
 
@@ -34,4 +32,4 @@ RUN apk -U --progress -q --no-cache add tini wget ttf-dejavu libxext libxrender 
 
 USER irpf
 
-ENTRYPOINT [ "java", "-jar", "/opt/IRPF2022/irpf.jar" ]
+ENTRYPOINT [ "java", "-jar", "/opt/IRPF2023/irpf.jar" ]
